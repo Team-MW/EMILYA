@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { BookButton } from "@/components/BookButton";
+import { FaqSection } from "@/components/FaqSection";
 import { Lotus } from "@/components/Logo";
+import { OrnamentCorners } from "@/components/Ornaments";
 import { PageHero } from "@/components/PageHero";
+import { faqs } from "@/lib/faq";
 import { boxes } from "@/lib/services";
 import { site } from "@/lib/site";
 
@@ -22,11 +25,14 @@ export default function OffrirPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
         <div className="grid gap-6 lg:grid-cols-3">
-          {boxes.map((box) => (
+          {boxes.map((box, i) => (
             <article
               key={box.name}
-              className="flex flex-col border border-gold/25 bg-ivory px-8 py-10 text-center"
+              className={`card-lux relative flex flex-col px-8 py-12 text-center ${
+                i === 1 ? "bg-cream/70 lg:-translate-y-3" : ""
+              }`}
             >
+              <OrnamentCorners />
               <Lotus className="mx-auto h-8 w-8 text-gold" />
               <h2 className="mt-5 font-display text-3xl text-ink">{box.name}</h2>
               <p className="mt-3 text-[11px] uppercase tracking-[0.24em] text-gold">
@@ -41,7 +47,8 @@ export default function OffrirPage() {
         </div>
 
         <div className="mt-16 grid gap-8 lg:grid-cols-2">
-          <article className="border border-gold/25 bg-cream/40 p-8 sm:p-10">
+          <article className="card-lux relative p-8 sm:p-10">
+            <OrnamentCorners />
             <p className="text-[10px] uppercase tracking-[0.38em] text-gold">Occasions</p>
             <h3 className="mt-3 font-display text-3xl text-ink">
               Événements & cartes cadeaux
@@ -52,7 +59,8 @@ export default function OffrirPage() {
               ambiance cocooning : je prépare tout pour rendre ce moment inoubliable.
             </p>
           </article>
-          <article className="border border-gold/25 bg-ivory p-8 sm:p-10">
+          <article className="card-lux relative p-8 sm:p-10">
+            <OrnamentCorners />
             <p className="text-[10px] uppercase tracking-[0.38em] text-gold">À venir</p>
             <h3 className="mt-3 font-display text-3xl text-ink">Formations Emilya</h3>
             <p className="mt-5 text-sm leading-8 text-taupe">
@@ -72,6 +80,8 @@ export default function OffrirPage() {
           </p>
         </div>
       </section>
+
+      <FaqSection items={faqs.offrir} />
     </>
   );
 }

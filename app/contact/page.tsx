@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { BookButton } from "@/components/BookButton";
+import { FaqSection } from "@/components/FaqSection";
+import { OrnamentCorners } from "@/components/Ornaments";
 import { PageHero } from "@/components/PageHero";
+import { faqs } from "@/lib/faq";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -27,7 +30,8 @@ export default function ContactPage() {
       />
 
       <section className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-2">
-        <div>
+        <div className="card-lux relative p-8 sm:p-10">
+          <OrnamentCorners />
           <p className="text-[10px] uppercase tracking-[0.38em] text-gold">Le salon</p>
           <h2 className="mt-3 font-display text-4xl text-ink">Emilya Paris</h2>
           <ul className="mt-8 space-y-6">
@@ -57,7 +61,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="relative min-h-[420px] overflow-hidden border border-gold/20 bg-cream">
+        <div className="img-frame relative min-h-[420px] overflow-hidden bg-cream">
           <Image
             src="/images/accueil.jpg"
             alt="Le studio Emilya, 19 Rue Descombes à Paris 17e"
@@ -70,12 +74,14 @@ export default function ContactPage() {
             href="https://maps.google.com/?q=19+Rue+Descombes+75017+Paris"
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute bottom-6 left-6 rounded-full bg-ivory px-5 py-2 text-[10px] uppercase tracking-[0.22em] text-night"
+            className="absolute bottom-6 left-6 z-10 rounded-full bg-ivory px-5 py-2 text-[10px] uppercase tracking-[0.22em] text-night"
           >
             Itinéraire
           </a>
         </div>
       </section>
+
+      <FaqSection items={faqs.contact} />
     </>
   );
 }

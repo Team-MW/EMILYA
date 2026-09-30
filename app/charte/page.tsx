@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { BookButton } from "@/components/BookButton";
 import { CharterMarks } from "@/components/CharterMarks";
+import { FaqSection } from "@/components/FaqSection";
+import { OrnamentCorners } from "@/components/Ornaments";
 import { PageHero } from "@/components/PageHero";
+import { faqs } from "@/lib/faq";
 
 export const metadata: Metadata = {
   title: "Charte professionnelle",
@@ -26,7 +29,8 @@ export default function ChartePage() {
           <CharterMarks />
         </div>
 
-        <div className="mx-auto mt-16 max-w-2xl space-y-6 rounded-sm bg-cream px-8 py-10 text-sm leading-8 text-taupe">
+        <div className="card-lux relative mx-auto mt-16 max-w-2xl space-y-6 px-8 py-10 text-sm leading-8 text-taupe">
+          <OrnamentCorners />
           <p>
             Tout comportement inapproprié entraînera l&apos;arrêt immédiat de la séance,{" "}
             <span className="font-medium text-ink">sans remboursement</span>.
@@ -48,6 +52,8 @@ export default function ChartePage() {
           <BookButton href="/soins">Découvrir les soins</BookButton>
         </div>
       </section>
+
+      <FaqSection items={faqs.charte} />
     </>
   );
 }

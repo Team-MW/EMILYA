@@ -11,7 +11,7 @@ export function ServiceList({ category }: { category: Category }) {
         {category.services.map((service) => (
           <li
             key={`${service.name}-${service.duration}`}
-            className="flex flex-col gap-3 py-5 sm:flex-row sm:items-center sm:justify-between"
+            className="flex flex-col gap-3 py-5 transition-colors hover:bg-cream/50 sm:flex-row sm:items-center sm:justify-between sm:px-3"
           >
             <div>
               <p className="font-display text-xl text-ink">{service.name}</p>

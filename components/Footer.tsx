@@ -4,7 +4,12 @@ import { Logo, Lotus } from "./Logo";
 
 export function Footer() {
   return (
-    <footer className="bg-night text-ivory">
+    <footer className="relative bg-night text-ivory">
+      <div className="absolute inset-x-0 -top-px flex justify-center">
+        <span className="flex h-6 w-6 rotate-45 items-center justify-center border border-gold/40 bg-night">
+          <span className="h-1.5 w-1.5 bg-gold" />
+        </span>
+      </div>
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:py-20">
         <div className="lg:col-span-5">
           <Logo tone="light" size="md" />

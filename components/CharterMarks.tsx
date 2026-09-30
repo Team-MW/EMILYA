@@ -111,7 +111,13 @@ export function CharterMarks() {
         <div key={title} className="flex flex-col items-center gap-3 text-center">
           <Icon />
           <p className="max-w-[9.5rem] text-[11px] uppercase leading-4 tracking-[0.14em] text-ink">
-            {title}
+            {title === "Pas de finition" ? (
+              <>
+                Pas de <span className="line-through">finition</span>
+              </>
+            ) : (
+              title
+            )}
           </p>
         </div>
       ))}

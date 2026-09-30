@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BookButton } from "@/components/BookButton";
+import { FaqSection } from "@/components/FaqSection";
 import { Hero } from "@/components/Hero";
 import { Lotus } from "@/components/Logo";
+import { OrnamentCorners } from "@/components/Ornaments";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CharterMarks } from "@/components/CharterMarks";
+import { faqs } from "@/lib/faq";
 import { categories, pillars } from "@/lib/services";
 import { site } from "@/lib/site";
 
@@ -43,6 +46,9 @@ export default function Home() {
             serein. Un échange préalable permet de créer le protocole adapté à vos
             besoins du jour — aucune technique figée, juste vous, ici et maintenant.
           </p>
+          <div className="mt-10 flex justify-center">
+            <span className="font-script text-4xl text-gold/80">The Art of Wellness</span>
+          </div>
         </Reveal>
       </section>
 
@@ -50,7 +56,8 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {pillars.map((pillar, i) => (
             <Reveal key={pillar.title} delay={i * 90}>
-              <article className="border border-gold/20 bg-ivory px-7 py-8 text-center">
+              <article className="card-lux relative px-7 py-10 text-center">
+                <OrnamentCorners />
                 <Lotus className="mx-auto h-8 w-8 text-gold" />
                 <h3 className="mt-5 font-display text-2xl text-ink">{pillar.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-taupe">{pillar.text}</p>
@@ -71,8 +78,9 @@ export default function Home() {
             <Reveal key={category.id} delay={i * 80}>
               <Link
                 href={`/soins#${category.id}`}
-                className="group flex h-full flex-col border border-gold/25 bg-ivory p-8 transition hover:border-gold/60 hover:bg-cream/40"
+                className="card-lux group relative flex h-full flex-col p-8 hover:bg-cream/30"
               >
+                <OrnamentCorners />
                 <p className="text-[10px] uppercase tracking-[0.32em] text-gold">
                   {category.subtitle}
                 </p>
@@ -95,7 +103,7 @@ export default function Home() {
       </section>
 
       <section className="grid lg:grid-cols-2">
-        <div className="relative min-h-[420px]">
+        <div className="relative min-h-[420px] img-frame">
           <Image
             src="/images/accueil.jpg"
             alt="Accueil du studio Emilya, comptoir cannelé et lettres dorées"
@@ -142,7 +150,7 @@ export default function Home() {
           <div className="mt-12">
             <CharterMarks />
           </div>
-          <p className="mx-auto mt-10 max-w-2xl rounded-sm bg-cream px-6 py-5 text-sm leading-7 text-taupe">
+          <p className="mx-auto mt-10 max-w-2xl rounded-sm border border-gold/20 bg-cream px-6 py-5 text-sm leading-7 text-taupe">
             Tout comportement inapproprié entraînera l&apos;arrêt immédiat de la séance,
             sans remboursement.
           </p>
@@ -187,6 +195,8 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+
+      <FaqSection items={faqs.home} />
     </div>
   );
 }

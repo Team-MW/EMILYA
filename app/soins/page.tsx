@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { BookButton } from "@/components/BookButton";
+import { FaqSection } from "@/components/FaqSection";
+import { OrnamentCorners } from "@/components/Ornaments";
 import { PageHero } from "@/components/PageHero";
 import { ServiceList } from "@/components/ServiceList";
+import { faqs } from "@/lib/faq";
 import { categories, extras } from "@/lib/services";
 import { site } from "@/lib/site";
 
@@ -62,7 +65,8 @@ export default function SoinsPage() {
           </ul>
         </section>
 
-        <div className="border border-gold/25 bg-cream/50 px-8 py-12 text-center">
+        <div className="card-lux relative px-8 py-12 text-center">
+          <OrnamentCorners />
           <p className="font-display text-3xl text-ink">Réservez votre moment</p>
           <p className="mx-auto mt-3 max-w-lg text-sm leading-7 text-taupe">
             Par téléphone, WhatsApp ou Planity. Confirmation immédiate, sur rendez-vous
@@ -76,6 +80,8 @@ export default function SoinsPage() {
           </div>
         </div>
       </div>
+
+      <FaqSection items={faqs.soins} />
     </>
   );
 }

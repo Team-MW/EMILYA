@@ -22,7 +22,11 @@ export function PageHero({
       />
       <div className="absolute inset-0 bg-gradient-to-b from-night/50 via-night/45 to-ivory" />
       <div className="relative mx-auto max-w-3xl px-5 pb-16 pt-16 text-center sm:px-6 sm:pb-20 sm:pt-20">
-        <p className="text-[10px] uppercase tracking-[0.42em] text-gold">{kicker}</p>
+        <p className="flex items-center justify-center gap-3 text-[10px] uppercase tracking-[0.42em] text-gold">
+          <span className="h-px w-8 bg-gold/60" />
+          {kicker}
+          <span className="h-px w-8 bg-gold/60" />
+        </p>
         <h1 className="mt-5 font-display text-4xl font-light sm:text-6xl text-balance">{title}</h1>
         <div className="mt-6 flex justify-center">
           <Lotus className="h-7 w-7 text-gold" />
