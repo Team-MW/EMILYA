@@ -39,7 +39,16 @@ export function Footer() {
         <div className="lg:col-span-4">
           <p className="text-[10px] uppercase tracking-[0.32em] text-gold">Le salon</p>
           <ul className="mt-5 space-y-3 text-sm leading-7 text-ivory/75">
-            <li>{site.address}</li>
+            <li>
+              <a
+                href={`https://maps.google.com/?q=${encodeURIComponent(site.address)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-ivory"
+              >
+                {site.address}
+              </a>
+            </li>
             <li>{site.area}</li>
             <li>{site.hours}</li>
             <li>{site.hoursNote}</li>
@@ -53,12 +62,28 @@ export function Footer() {
       </div>
 
       <div className="border-t border-ivory/10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 py-6 text-[11px] uppercase tracking-[0.22em] text-ivory/45 sm:flex-row sm:px-8">
-          <p>© {new Date().getFullYear()} Emilya Paris</p>
-          <p className="flex items-center gap-2">
-            <Lotus className="h-4 w-4 text-gold" />
-            Bien-être · Relâchement · Équilibre
-          </p>
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-5 py-6 text-[10px] uppercase tracking-[0.22em] text-ivory/45 sm:flex-row sm:px-8">
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
+            <p>© {new Date().getFullYear()} Emilya Paris</p>
+            <div className="flex items-center gap-4">
+              <Link href="/mentions-legales" className="transition-colors hover:text-ivory">Mentions légales</Link>
+              <span className="text-ivory/20">|</span>
+              <Link href="/confidentialite" className="transition-colors hover:text-ivory">Confidentialité</Link>
+            </div>
+          </div>
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
+            <p className="flex items-center gap-2">
+              <Lotus className="h-4 w-4 text-gold" />
+              Bien-être · Relâchement · Équilibre
+            </p>
+            <span className="hidden text-ivory/20 sm:inline">|</span>
+            <p>
+              Réalisé par{" "}
+              <a href="https://microdidact.com/" target="_blank" rel="noopener noreferrer" className="text-ivory hover:text-gold transition-colors">
+                Microdidact
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

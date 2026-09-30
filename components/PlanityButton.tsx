@@ -22,8 +22,8 @@ export function PlanityButton({ className = "", variant = "solid" }: Props) {
         alt="Réserver sur Planity"
         width={120}
         height={40}
-        className={`h-7 sm:h-9 w-auto object-contain ${
-          isDarkBg ? "invert mix-blend-screen" : "mix-blend-multiply"
+        className={`h-7 sm:h-9 w-auto object-contain rounded-md ${
+          isDarkBg ? "invert mix-blend-screen" : ""
         }`}
       />
     </a>
