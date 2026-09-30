@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { nav, site } from "@/lib/site";
 import { Logo } from "./Logo";
+import { PlanityButton } from "./PlanityButton";
 
 export function Header() {
   const pathname = usePathname();
@@ -66,19 +67,10 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <a
-              href={site.planity}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`hidden rounded-full px-5 py-2 text-[10px] uppercase tracking-[0.28em] transition-colors sm:inline-flex items-center gap-2 ${
-                solid
-                  ? "bg-night text-ivory hover:bg-ink"
-                  : "border border-ivory/80 text-ivory hover:bg-ivory hover:text-night"
-              }`}
-            >
-              Réserver sur
-              <img src="/planity_logo.jpg" alt="Planity" className={`h-3 w-auto object-contain ${solid ? "mix-blend-multiply" : "invert"}`} />
-            </a>
+            <PlanityButton
+              className="hidden sm:inline-flex"
+              variant={solid ? "solid" : "outline"}
+            />
             <button
               type="button"
               className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border lg:hidden ${
@@ -115,15 +107,7 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <a
-            href={site.planity}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 flex items-center gap-3 rounded-full bg-night px-8 py-3 text-[11px] uppercase tracking-[0.28em] text-ivory"
-          >
-            Réserver sur
-            <img src="/planity_logo.jpg" alt="Planity" className="h-4 w-auto object-contain mix-blend-multiply" />
-          </a>
+          <PlanityButton className="mt-4" />
         </nav>
       </div>
     </>
