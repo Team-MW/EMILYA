@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BookButton } from "@/components/BookButton";
+import { PlanityButton } from "@/components/PlanityButton";
 import { FaqSection } from "@/components/FaqSection";
 import { OrnamentCorners } from "@/components/Ornaments";
 import { PageHero } from "@/components/PageHero";
@@ -74,9 +75,7 @@ export default function SoinsPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <BookButton>WhatsApp</BookButton>
-            <BookButton href={site.planity} className="!bg-transparent !text-ink ring-1 ring-ink/20">
-              Planity
-            </BookButton>
+            <PlanityButton className="!bg-transparent !text-ink ring-1 ring-ink/20 hover:!bg-ink hover:!text-ivory" />
           </div>
         </div>
       </div>

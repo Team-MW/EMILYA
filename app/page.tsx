@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BookButton } from "@/components/BookButton";
+import { PlanityButton } from "@/components/PlanityButton";
 import { FaqSection } from "@/components/FaqSection";
 import { Hero } from "@/components/Hero";
 import { Lotus } from "@/components/Logo";
@@ -188,9 +189,7 @@ export default function Home() {
               <BookButton href="/offrir" variant="outline">
                 Offrir
               </BookButton>
-              <BookButton variant="light" href={site.planity}>
-                Prendre rendez-vous
-              </BookButton>
+              <PlanityButton variant="light" />
             </div>
           </Reveal>
         </div>

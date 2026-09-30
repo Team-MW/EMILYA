@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Logo, Lotus } from "./Logo";
+import { PlanityButton } from "./PlanityButton";
 import { BookButton } from "./BookButton";
 
 export function Hero() {
@@ -49,7 +50,7 @@ export function Hero() {
           <BookButton variant="outline" href="/soins">
             Découvrir
           </BookButton>
-          <BookButton variant="light">Réserver</BookButton>
+          <PlanityButton variant="light" />
         </div>
         <div className="mt-14 flex flex-col items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-ivory/60">
           <span>Scroll</span>

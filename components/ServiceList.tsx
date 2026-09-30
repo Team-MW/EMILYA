@@ -1,4 +1,5 @@
 import { BookButton } from "./BookButton";
+import { PlanityButton } from "./PlanityButton";
 import type { Category } from "@/lib/services";
 
 export function ServiceList({ category }: { category: Category }) {
@@ -22,7 +23,7 @@ export function ServiceList({ category }: { category: Category }) {
             </div>
             <div className="flex items-center justify-between gap-6 sm:justify-end">
               <p className="font-display text-2xl text-bronze">{service.price}</p>
-              <BookButton className="!px-5 !py-2">Choisir</BookButton>
+              <PlanityButton className="!px-5 !py-2" />
             </div>
           </li>
         ))}

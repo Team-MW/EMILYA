@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { nav, site } from "@/lib/site";
+import { PlanityButton } from "./PlanityButton";
 import { Logo, Lotus } from "./Logo";
 
 export function Footer() {
@@ -17,6 +18,9 @@ export function Footer() {
             Massage professionnel et rituels de bien-être dans un écrin confidentiel
             au cœur du 17<sup>e</sup> arrondissement. Relax. Recharge. Reconnect.
           </p>
+          <div className="mt-8">
+            <PlanityButton variant="light" />
+          </div>
         </div>
 
         <div className="lg:col-span-3">

@@ -67,16 +67,17 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             <a
-              href={site.whatsapp}
+              href={site.planity}
               target="_blank"
               rel="noopener noreferrer"
-              className={`hidden rounded-full px-5 py-2 text-[10px] uppercase tracking-[0.28em] transition-colors sm:inline-flex ${
+              className={`hidden rounded-full px-5 py-2 text-[10px] uppercase tracking-[0.28em] transition-colors sm:inline-flex items-center gap-2 ${
                 solid
                   ? "bg-night text-ivory hover:bg-ink"
                   : "border border-ivory/80 text-ivory hover:bg-ivory hover:text-night"
               }`}
             >
-              Réserver
+              Réserver sur
+              <img src="/planity_logo.jpg" alt="Planity" className={`h-3 w-auto object-contain ${solid ? "mix-blend-multiply" : "invert"}`} />
             </a>
             <button
               type="button"
@@ -115,12 +116,13 @@ export function Header() {
             </Link>
           ))}
           <a
-            href={site.whatsapp}
+            href={site.planity}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 rounded-full bg-night px-8 py-3 text-[11px] uppercase tracking-[0.28em] text-ivory"
+            className="mt-4 flex items-center gap-3 rounded-full bg-night px-8 py-3 text-[11px] uppercase tracking-[0.28em] text-ivory"
           >
-            Réserver
+            Réserver sur
+            <img src="/planity_logo.jpg" alt="Planity" className="h-4 w-auto object-contain mix-blend-multiply" />
           </a>
         </nav>
       </div>

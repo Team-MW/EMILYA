@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { BookButton } from "@/components/BookButton";
+import { PlanityButton } from "@/components/PlanityButton";
 import { FaqSection } from "@/components/FaqSection";
 import { OrnamentCorners } from "@/components/Ornaments";
 import { PageHero } from "@/components/PageHero";
@@ -55,9 +56,7 @@ export default function ContactPage() {
           </ul>
           <div className="mt-10 flex flex-wrap gap-4">
             <BookButton>WhatsApp</BookButton>
-            <BookButton href={site.planity} className="!bg-transparent !text-ink ring-1 ring-ink/20">
-              Réserver sur Planity
-            </BookButton>
+            <PlanityButton className="!bg-transparent !text-ink ring-1 ring-ink/20 hover:!bg-ink hover:!text-ivory" />
           </div>
         </div>
 
